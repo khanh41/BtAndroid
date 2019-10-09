@@ -6,57 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".AddContactActivity">
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp">
+
         <Button
+            android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="X"
-            android:id="@+id/btn_cancel"
-            android:onClick="backClicked"/>
+            android:onClick="backClicked"
+            android:text="X" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorBlue"
+            android:gravity="center_horizontal"
             android:text="Add Contact"
             android:textSize="35sp"
-            android:textStyle="bold"
-            android:background="@color/colorBlue"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentLeft="true"
-            android:gravity="center_horizontal"/>
+            android:textStyle="bold" />
+
         <Button
+            android:id="@+id/btn_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="V"
-            android:id="@+id/btn_done"/>
+            android:text="V" />
+
         <ImageView
+            android:id="@+id/contact"
             android:layout_width="fill_parent"
             android:layout_height="300dp"
             android:layout_below="@+id/btn_cancel"
             android:layout_marginTop="20dp"
-            android:id="@+id/contact"
-            android:src="@drawable/ic_male"
-            />
+            android:src="@drawable/ic_male" />
+
+        <TextView
+            android:id="@+id/text_id"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
         <EditText
+            android:id="@+id/text_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_below="@+id/contact"
+            android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
-            android:id="@+id/text_name"
             android:hint="Name"
-            android:textSize="30sp"/>
+            android:textSize="30sp" />
+
         <EditText
+            android:id="@+id/text_number"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_name"
             android:gravity="center_horizontal"
-            android:id="@+id/text_number"
             android:hint="Phone"
-            android:textSize="30sp"/>
+            android:textSize="30sp" />
     </RelativeLayout>
 </LinearLayout>
