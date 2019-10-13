@@ -6,9 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 
 import com.example.contact.Contact;
 
@@ -25,7 +22,7 @@ public class DBManager extends SQLiteOpenHelper {
     private static final int VERSION = 1;
     private Context context;
     private String SQLQuery = "CREATE TABLE " + TABLE_NAME + " (" +
-            ID + " integer primary key, " +
+            ID + " integer primary key autoincrement, " +
             NAME + " TEXT, " +
             PHONE + " TEXT)";
 
@@ -45,7 +42,7 @@ public class DBManager extends SQLiteOpenHelper {
     }
     public void addContact(Contact contact){
 
-        SQLiteDatabase db = new DBManager(context).getWritableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(NAME,contact.getmName());
         values.put(PHONE,contact.getmPhone());
@@ -54,9 +51,8 @@ public class DBManager extends SQLiteOpenHelper {
     }
     public List<Contact> getAllContact(){
         List<Contact> ListContact = new ArrayList<>();
-
         String selecQuery = "SELECT * FROM " + TABLE_NAME;
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.rawQuery(selecQuery,null);
         if(cursor.moveToFirst()){
             do{

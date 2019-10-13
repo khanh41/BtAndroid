@@ -14,6 +14,7 @@ import com.example.contact.Contact;
 import com.example.contact.R;
 
 import java.util.List;
+import java.util.Locale;
 
 public class CustomAdapter extends ArrayAdapter<Contact> {
     private  Context context;
@@ -47,6 +48,7 @@ public class CustomAdapter extends ArrayAdapter<Contact> {
         viewHolder.tvPhone.setText(contact.getmPhone());
         return convertView;
     }
+
     public class ViewHolder{
         private TextView tvId;
         private TextView tvName;
